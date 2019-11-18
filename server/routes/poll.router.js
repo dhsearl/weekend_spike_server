@@ -43,7 +43,7 @@ router.get('/:url', (req,res) =>{
     const queryArgs = [req.params.url]
     pool.query(queryText, queryArgs)
     .then((response)=>{
-        //console.log(response.rows);
+        console.log('responding with',req.params.url);
         
         res.send(response.rows[0]);
     })

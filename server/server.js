@@ -42,8 +42,8 @@ app.get('/:id', (req, res) => {
 })
 
 
-
-app.get("*", (req, res) => res.status(404).send({code: '404', message: 'no found'}))
+app.all("*", (req,res) => res.redirect('/'));
+// app.get("*", (req, res) => res.status(404).send({code: '404', message: 'no found'}))
 /** Listen * */
 app.listen(PORT, () => {
     console.log(`Listening on port: ${PORT}`);
